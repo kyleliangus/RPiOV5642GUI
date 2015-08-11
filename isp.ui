@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>isp</class>
+ <widget class="QDialog" name="isp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>673</width>
+    <height>454</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>260</y>
+     <width>211</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>90</y>
+     <width>201</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ISP/ISP Format</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="control00Box">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>92</y>
+     <width>221</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Control 00</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QRadioButton" name="lencCorrectionRadio">
+      <property name="text">
+       <string>LENC Correction</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="yuvGammaRadio">
+      <property name="text">
+       <string>YUV Gamma</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="rawGammaRadio">
+      <property name="text">
+       <string>RAW Gamma</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="evenOddRadio">
+      <property name="text">
+       <string>Even odd removing</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="denoiseRadio">
+      <property name="text">
+       <string>De noise</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="blackPixelCancellationRadio">
+      <property name="text">
+       <string>Black Pixel Cancellation</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="whitePixelCancellationRadio">
+      <property name="text">
+       <string>White Pixel Cancellation</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="colorInterpolationRadio">
+      <property name="text">
+       <string>Color Interpolation</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="control01Box">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>90</y>
+     <width>181</width>
+     <height>273</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Control 01</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QRadioButton" name="specialDigitalEffects">
+      <property name="text">
+       <string>Special Digital Effects</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="uvAdjustRadio">
+      <property name="text">
+       <string>UV Adjust</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="verticalScalingRadio">
+      <property name="text">
+       <string>Vertical Scaling</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="horizontalScalingRadio">
+      <property name="text">
+       <string>Horizontal Scaling</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="lineStretchRadio">
+      <property name="text">
+       <string>Line Stretch</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="uvAverageRadio">
+      <property name="text">
+       <string>UV Average</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="colorMatrixRadio">
+      <property name="text">
+       <string>Color Matrix</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="autoWhiteBalanceRadio">
+      <property name="text">
+       <string>Auto White Balance</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="control02Box">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>90</y>
+     <width>191</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Control 02</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <widget class="QRadioButton" name="thumbnailScalingRadio">
+      <property name="text">
+       <string>Thumbnail Scaling</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="ditheringRadio">
+      <property name="text">
+       <string>Dithering </string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="yuvToRGBRadio">
+      <property name="text">
+       <string>YUV to RGB</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="horizontalSubsamplingRadio">
+      <property name="text">
+       <string>Horizontal Subsampling</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">ispControlGroup</string>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="control03Box">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>90</y>
+     <width>181</width>
+     <height>128</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Control 03</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QRadioButton" name="yuvToYCbCrRadio">
+      <property name="text">
+       <string>YUV to YCbCr</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="yuv422Radio">
+      <property name="text">
+       <string>YUV 422</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="drawWindowAFCRadio">
+      <property name="text">
+       <string>Draw window for AFC</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="control05Box">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>90</y>
+     <width>191</width>
+     <height>186</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Control 05</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_6">
+    <item>
+     <widget class="QRadioButton" name="rawGamma1Radio">
+      <property name="text">
+       <string>Raw gamma option 1</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="rawGamma2Radio">
+      <property name="text">
+       <string>Raw gamma option 2</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="advancedAWBRadio">
+      <property name="text">
+       <string>Advanced AWB option 1</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="lensCorrection1Radio">
+      <property name="text">
+       <string>Lens correction option 1</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="lensCorrection2Radio">
+      <property name="text">
+       <string>Lens correction option 2</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="horizontalSubsampleModeBox">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>90</y>
+     <width>291</width>
+     <height>173</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Horizontal Subsample Mode</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_9">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <widget class="QLabel" name="hsmBChannelLabel">
+        <property name="text">
+         <string>B Channel</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="hsmBChannelCombo">
+        <item>
+         <property name="text">
+          <string>Average Mode</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Skip Mode</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="hsmGbChannelLabel">
+        <property name="text">
+         <string>Gb Channel</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="hsmGbChannelCombo">
+        <item>
+         <property name="text">
+          <string>Average Mode</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Skip Mode</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="hsmGrChannelLabel">
+        <property name="text">
+         <string>Gr Channel</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="hsmGrChannelCombo">
+        <item>
+         <property name="text">
+          <string>Average Mode</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Skip Mode</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="hsmRChannelLabel">
+        <property name="text">
+         <string>R Channel</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="hsmRChannelCombo">
+        <item>
+         <property name="text">
+          <string>Average Mode</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Skip Mode</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="rgbDitherControlBox">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>90</y>
+     <width>291</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>RGB Dither Control</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_8">
+    <item>
+     <widget class="QRadioButton" name="rgbDitherControlSystemRadio">
+      <property name="text">
+       <string>Dither Control Selection( from system )</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="rgbDitherControlRegisterRadio">
+      <property name="text">
+       <string>Dither Control Selection( from register )</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="rChannelLabel">
+        <property name="text">
+         <string>R Channel Register</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="rChannelCombo">
+        <item>
+         <property name="text">
+          <string>RGB444</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>RGB565/555</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="gChannelLabel">
+        <property name="text">
+         <string>G Channel Register</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="gChannelCombo">
+        <item>
+         <property name="text">
+          <string>RGB444</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>RGB565/555</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="bChannelLabel">
+        <property name="text">
+         <string>B Channel Register</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="bChannelCombo">
+        <item>
+         <property name="text">
+          <string>RGB444</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>RGB565/555</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>661</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="c00Tab">
+    <attribute name="title">
+     <string>00</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="c01Tab">
+    <attribute name="title">
+     <string>01</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="c02Tab">
+    <attribute name="title">
+     <string>02</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="c03Tab">
+    <attribute name="title">
+     <string>03</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="c05Tab">
+    <attribute name="title">
+     <string>05</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="horizontalSubsampleModeTab">
+    <attribute name="title">
+     <string>Horizontal Subsample Mode</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="rgbDitherControlTab">
+    <attribute name="title">
+     <string>RGB Dither Control</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="formatControlTab">
+    <attribute name="title">
+     <string>Format Control</string>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="formatControlBox">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>90</y>
+     <width>281</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_7">
+    <item>
+     <widget class="QCheckBox" name="formatControlCheck">
+      <property name="text">
+       <string>Format Control</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="formatControlFrame">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QRadioButton" name="formatControlSwapYAndUVRadio">
+         <property name="text">
+          <string>Swap Y and UV of external camera</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="formatControlISPYUVRadio_2">
+         <property name="text">
+          <string>ISP YUV</string>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">ispControlGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="formatControlISPRGBRadio">
+         <property name="text">
+          <string>ISP RGB</string>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">ispControlGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="formatControlISPYUVRadio">
+         <property name="text">
+          <string>ISP YUV</string>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">ispControlGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="formatControlISPRAWRadio">
+         <property name="text">
+          <string>ISP RAW</string>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">ispControlGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="formatControlInternalCIFRAWRadio">
+         <property name="text">
+          <string>Internal CIF RAW</string>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">ispControlGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="formatControlExternalCIFRAWRadio">
+         <property name="text">
+          <string>External CIF RAW</string>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">ispControlGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="formatControlExternalCIFYUVRadio">
+         <property name="text">
+          <string>External CIF YUV422 bypass enable</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">ispControlGroup</string>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="horizontalSubsampleOffWarningLabel">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>360</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Locate ISP02 to turn on Horizon Subsample Mode</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="horizontalSubsampleDefaultWarningLabel">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>370</y>
+     <width>331</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Defaulted by VAP Control for all Average Mode</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>isp</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>isp</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <buttongroups>
+  <buttongroup name="ispControlGroup">
+   <property name="exclusive">
+    <bool>false</bool>
+   </property>
+  </buttongroup>
+ </buttongroups>
+</ui>
