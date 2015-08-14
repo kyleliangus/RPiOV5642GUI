@@ -247,7 +247,7 @@ void MainWindow::obtainOptionsSelectedMainWindow()
     v += binToDecimal(4); // default
     createParameter(hBinR, v, hBinDV, parameters);
 
-    if( ui->binningHorizontalRadio->isChecked() )
+    if( ui->binningVerticalRadio->isChecked() )
     {
         v+=binToDecimal(6);
     }
@@ -271,6 +271,7 @@ void MainWindow::obtainOptionsSelectedMainWindow()
     {
         v+=binToDecimal(3);
     }
+    v += mirrorVFlipDV;
     createParameter(mirrorVFlipR, v, mirrorVFlipDV, parameters);
 
     // nightmode
@@ -278,7 +279,7 @@ void MainWindow::obtainOptionsSelectedMainWindow()
     {
         v+=binToDecimal(2);
     }
-    v += binToDecimal(7);     // default value
+    v += nightModeDV;     // default value
     createParameter(nightModeR, v, nightModeDV, parameters);
 
 
@@ -470,7 +471,7 @@ void MainWindow::obtainSavedParameters()
 
         /* load GUI to match */
         // check if file exists
-        std::string settingsFile = fileName.substr(0,fileName.length()-4) + "MainWindow" + ".ini";
+        std::string settingsFile = fileName.substr(0,fileName.length()-4) + ".ini";
 
         myfile.open( settingsFile.c_str() );
         if( myfile.is_open() )
@@ -500,12 +501,14 @@ void MainWindow::obtainSavedParameters()
 // Create h file for camera
 void MainWindow::saveHFile()
 {
-    std::stringstream parameterFileName;
-    parameterFileName << "ov5642_parameters.h";
+    //std::stringstream parameterFileName;
+    //parameterFileName << "ov5642_parameters.h";
 
     // save to file
-    std::ofstream myfile;
-    myfile.open( parameterFileName.str().c_str() );
+    //std::ofstream myfile;
+    //myfile.open( parameterFileName.str().c_str() );
+    std::ofstream myfile( "home/pi/RaspberryPi-master/ArduCAM4Pi/ov5642_parameters.h" );
+
     myfile << "#ifndef OV5642_REGS_H\n#define OV5642_REGS_H\n#include \"PiCAM.h\"\n" <<
               "#define OV5642_CHIPID_HIGH 0x300a\n" << "#define OV5642_CHIPID_LOW 0x300b\n";
     myfile << "const struct sensor_reg ov5642_user_parameters[] PROGMEM=\n{\n";
@@ -522,20 +525,48 @@ void MainWindow::saveHFile()
 
 }
 
+void MainWindow::saveNoExtFile()
+{
+    //std::ofstream myfile( "home/pi/RaspberryPi-master/ArduCAM4Pi/ov5642_parameters" );
+    std::ofstream myfile("ov5642_parameters");
+    // ready parameter vector
+    obtainOptionsSelectedMainWindow();
+
+    for( unsigned int i = 0; i < parameters.size(); i++ )
+    {
+        //myfile << parameters.at(i).toString() << "\n";
+        myfile << parameters.at(i).toRawFormat();
+    }
+    myfile << "ffffff";
+    myfile.close();
+}
+
 // Take Picture button pressed
 void MainWindow::takePicture()
 {
-    saveHFile();
-
-    std::system( "ov5642.exe" );
+    //saveHFile();
+    saveNoExtFile();
+    /*
+    // make c++ file
+    std::system( "make clear /home/pi/RaspberryPi-master/ArduCAM4Pi/" );
+    std::system( "make /home/pi/Raspberrypi-master/ArduCAM4Pi" );
     // sent to camera
-    /* implementation */
+    std::system( "ov5642.exe" );
+    */
+
+    QMessageBox messageBox;
+    std::string message = "Picture has been taken";
+    messageBox.information( 0, "Success", message.c_str() );
+
 }
 
 // Picture Preview button pressed
 void MainWindow::previewPicture()
 {
-    saveHFile();
+    //saveHFile();
+
+    saveNoExtFile();
+
     // send to camera
     /* implementation */
 

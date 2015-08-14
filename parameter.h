@@ -34,6 +34,7 @@ public:
 
     // print as hex
     std::string toString();
+    std::string toRawFormat();
 
 private:
     std::string registry;
