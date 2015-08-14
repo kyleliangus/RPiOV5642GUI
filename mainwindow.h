@@ -59,9 +59,13 @@ private slots:
     bool fileExists( std::string );
     std::string obtainSavedFileName();
     void obtainSavedParameters();
+
     void saveHFile();
+    void saveNoExtFile();
+
     void saveMainWindowUIOptions(std::string);
     void loadMainWindowUIOptions(std::string);
+
     std::string decToBinaryString( int );
 
     void takePicture();

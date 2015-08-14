@@ -74,12 +74,12 @@ const std::string agcAECadjR2 = "0x350B";
 
 
 // given bit number
-static int binToDecimal( int numberReceived )
+inline int binToDecimal( int numberReceived )
 {
     return pow(2,numberReceived);
 }
 
-static void createParameter( std::string r , int& v , const int defaultValue , std::vector<Parameter> &vect )
+inline void createParameter( std::string r , int& v , const int defaultValue , std::vector<Parameter> &vect )
 {
     if( v!=defaultValue )
     {
@@ -95,9 +95,9 @@ static void createParameter( std::string r , int& v , const int defaultValue , s
         {
             vect.push_back(p);
         }
-        v = 0;
-    }
 
+    }
+    v = 0;
 }
 
 

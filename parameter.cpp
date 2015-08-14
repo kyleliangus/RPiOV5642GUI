@@ -1,8 +1,7 @@
 #include "parameter.h"
 
-using namespace std;
 
-Parameter::Parameter( string r , int v )
+Parameter::Parameter( std::string r , int v )
 {
     registry = r;
     value = v;
@@ -34,12 +33,19 @@ Parameter::operator= ( const Parameter &b )
 } */
 
 // functions
-string Parameter::toString()
+std::string Parameter::toString()
 {
-    stringstream a;
+    std::stringstream a;
     //a << this->getRegistry() << ", 0x" << std::setfill ('0')
       //       << std::setw(sizeof(int)*2) << std::hex << this->getValue();
     a << this->getRegistry() << ", 0x" << std::setfill ('0') << std::setw(2) << std::hex << this->getValue();
     return a.str();
+}
+
+std::string Parameter::toRawFormat()
+{
+    std::stringstream b;
+    b << (this->getRegistry()).substr(2, 4) << std::setfill ('0') << std::setw(2) << std::hex << this->getValue();
+    return b.str();
 }
 
